@@ -1,5 +1,3 @@
-let aosInstance = null;
-
 const reviewsSwiper = new Swiper('.reviewsSwiper', {
     loop: true,
     autoplay: { delay: 4000, disableOnInteraction: false },
@@ -300,40 +298,33 @@ document.querySelectorAll('.category-btn').forEach(btn => btn.addEventListener('
 const pages = { home: document.getElementById('home-page'), catalog: document.getElementById('catalog-page'), about: document.getElementById('about-page'), contacts: document.getElementById('contacts-page') };
 const navLinksAll = document.querySelectorAll('.nav-links a');
 
-// ========== НОВАЯ СИСТЕМА АНИМАЦИЙ ПРИ СКРОЛЛЕ (18 видов анимаций) ==========
+// ========== СИСТЕМА АНИМАЦИЙ ПРИ СКРОЛЛЕ (СВОЯ, БЕЗ AOS) ==========
 function initScrollAnimations() {
-    const animatedElements = document.querySelectorAll('[data-aos]');
+    const animatedElements = document.querySelectorAll('[data-scroll]');
     
-    // Добавляем классы для анимации
     animatedElements.forEach(el => {
-        // Сохраняем оригинальное значение data-aos
-        let aosType = el.getAttribute('data-aos');
-        const aosDelay = el.getAttribute('data-aos-delay');
-        const aosDuration = el.getAttribute('data-aos-duration');
+        let scrollType = el.getAttribute('data-scroll');
+        const scrollDelay = el.getAttribute('data-delay');
+        const scrollDuration = el.getAttribute('data-duration');
         
-        // Поддержка разных типов анимаций
         const animationTypes = [
             'fade-up', 'fade-down', 'fade-left', 'fade-right',
-            'zoom-in', 'zoom-out', 'flip', 'rotate',
-            'slide-blur-up', 'slide-blur-left', 'bounce-up',
-            'elastic-left', 'elastic-right', 'flip-x', 'flip-y',
-            'jack-in', 'glow', 'shake'
+            'zoom-in', 'zoom-out', 'rotate-left', 'rotate-right',
+            'flip-x', 'flip-y', 'blur-up', 'blur-left', 'blur-right',
+            'bounce-up', 'elastic-left', 'elastic-right', 'jack-in',
+            'shake', 'glow'
         ];
         
-        // Добавляем базовый класс
         el.classList.add('scroll-animate');
         
-        // Если тип анимации не распознан, используем fade-up по умолчанию
-        if (!animationTypes.includes(aosType)) {
-            aosType = 'fade-up';
+        if (!animationTypes.includes(scrollType)) {
+            scrollType = 'fade-up';
         }
         
-        // Добавляем класс направления
-        el.classList.add(aosType);
+        el.classList.add(scrollType);
         
-        // Добавляем задержку если есть (поддержка до 1000мс = 10)
-        if (aosDelay) {
-            const delayValue = parseInt(aosDelay);
+        if (scrollDelay) {
+            const delayValue = parseInt(scrollDelay);
             const delayClass = `delay-${Math.floor(delayValue / 100)}`;
             if (delayClass === 'delay-0' || delayClass === 'delay-1' || delayClass === 'delay-2' || 
                 delayClass === 'delay-3' || delayClass === 'delay-4' || delayClass === 'delay-5' ||
@@ -343,22 +334,18 @@ function initScrollAnimations() {
             }
         }
         
-        // Добавляем длительность если есть
-        if (aosDuration) {
-            const durationValue = parseInt(aosDuration);
+        if (scrollDuration) {
+            const durationValue = parseInt(scrollDuration);
             if (durationValue <= 500) el.classList.add('duration-fast');
             else if (durationValue <= 1000) el.classList.add('duration-normal');
             else if (durationValue <= 1500) el.classList.add('duration-slow');
-            else el.classList.add('duration-slower');
         }
         
-        // Удаляем оригинальные data-aos атрибуты
-        el.removeAttribute('data-aos');
-        if (aosDelay) el.removeAttribute('data-aos-delay');
-        if (aosDuration) el.removeAttribute('data-aos-duration');
+        el.removeAttribute('data-scroll');
+        if (scrollDelay) el.removeAttribute('data-delay');
+        if (scrollDuration) el.removeAttribute('data-duration');
     });
     
-    // Настройка Intersection Observer
     const observerOptions = {
         root: null,
         rootMargin: '0px 0px -30px 0px',
@@ -374,14 +361,12 @@ function initScrollAnimations() {
         });
     }, observerOptions);
     
-    // Наблюдаем за всеми элементами с анимацией
     document.querySelectorAll('.scroll-animate').forEach(el => {
         observer.observe(el);
     });
 }
 
 function refreshPageAnimations() {
-    // Перезапускаем анимации при смене страницы
     setTimeout(() => {
         const animatedElements = document.querySelectorAll('.scroll-animate:not(.animated)');
         animatedElements.forEach(el => {
@@ -541,7 +526,6 @@ function initYandexMap() {
 
 filterAndSort();
 renderPromo();
-// Запускаем новую систему анимаций
 initScrollAnimations();
 const initialPage = window.location.hash.slice(1) || 'home';
 if (pages[initialPage]) showPage(initialPage, false); else showPage('home', false);
