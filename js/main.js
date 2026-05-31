@@ -1,20 +1,5 @@
 let aosInstance = null;
 
-function initAOS() {
-    if (aosInstance) {
-        aosInstance.refresh();
-    } else {
-        aosInstance = AOS.init({
-            duration: 800,
-            once: false,
-            mirror: true,
-            offset: 80,
-            easing: 'ease-in-out'
-        });
-        document.body.classList.add('aos-initialized');
-    }
-}
-
 const reviewsSwiper = new Swiper('.reviewsSwiper', {
     loop: true,
     autoplay: { delay: 4000, disableOnInteraction: false },
@@ -315,9 +300,97 @@ document.querySelectorAll('.category-btn').forEach(btn => btn.addEventListener('
 const pages = { home: document.getElementById('home-page'), catalog: document.getElementById('catalog-page'), about: document.getElementById('about-page'), contacts: document.getElementById('contacts-page') };
 const navLinksAll = document.querySelectorAll('.nav-links a');
 
+// ========== НОВАЯ СИСТЕМА АНИМАЦИЙ ПРИ СКРОЛЛЕ (18 видов анимаций) ==========
+function initScrollAnimations() {
+    const animatedElements = document.querySelectorAll('[data-aos]');
+    
+    // Добавляем классы для анимации
+    animatedElements.forEach(el => {
+        // Сохраняем оригинальное значение data-aos
+        let aosType = el.getAttribute('data-aos');
+        const aosDelay = el.getAttribute('data-aos-delay');
+        const aosDuration = el.getAttribute('data-aos-duration');
+        
+        // Поддержка разных типов анимаций
+        const animationTypes = [
+            'fade-up', 'fade-down', 'fade-left', 'fade-right',
+            'zoom-in', 'zoom-out', 'flip', 'rotate',
+            'slide-blur-up', 'slide-blur-left', 'bounce-up',
+            'elastic-left', 'elastic-right', 'flip-x', 'flip-y',
+            'jack-in', 'glow', 'shake'
+        ];
+        
+        // Добавляем базовый класс
+        el.classList.add('scroll-animate');
+        
+        // Если тип анимации не распознан, используем fade-up по умолчанию
+        if (!animationTypes.includes(aosType)) {
+            aosType = 'fade-up';
+        }
+        
+        // Добавляем класс направления
+        el.classList.add(aosType);
+        
+        // Добавляем задержку если есть (поддержка до 1000мс = 10)
+        if (aosDelay) {
+            const delayValue = parseInt(aosDelay);
+            const delayClass = `delay-${Math.floor(delayValue / 100)}`;
+            if (delayClass === 'delay-0' || delayClass === 'delay-1' || delayClass === 'delay-2' || 
+                delayClass === 'delay-3' || delayClass === 'delay-4' || delayClass === 'delay-5' ||
+                delayClass === 'delay-6' || delayClass === 'delay-7' || delayClass === 'delay-8' ||
+                delayClass === 'delay-9' || delayClass === 'delay-10') {
+                el.classList.add(delayClass);
+            }
+        }
+        
+        // Добавляем длительность если есть
+        if (aosDuration) {
+            const durationValue = parseInt(aosDuration);
+            if (durationValue <= 500) el.classList.add('duration-fast');
+            else if (durationValue <= 1000) el.classList.add('duration-normal');
+            else if (durationValue <= 1500) el.classList.add('duration-slow');
+            else el.classList.add('duration-slower');
+        }
+        
+        // Удаляем оригинальные data-aos атрибуты
+        el.removeAttribute('data-aos');
+        if (aosDelay) el.removeAttribute('data-aos-delay');
+        if (aosDuration) el.removeAttribute('data-aos-duration');
+    });
+    
+    // Настройка Intersection Observer
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -30px 0px',
+        threshold: 0.1
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animated');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    // Наблюдаем за всеми элементами с анимацией
+    document.querySelectorAll('.scroll-animate').forEach(el => {
+        observer.observe(el);
+    });
+}
+
 function refreshPageAnimations() {
-    if (aosInstance) setTimeout(() => aosInstance.refresh(), 100);
-    if (reviewsSwiper) setTimeout(() => reviewsSwiper.update(), 150);
+    // Перезапускаем анимации при смене страницы
+    setTimeout(() => {
+        const animatedElements = document.querySelectorAll('.scroll-animate:not(.animated)');
+        animatedElements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100) {
+                el.classList.add('animated');
+            }
+        });
+    }, 150);
 }
 
 function showPage(pageId, addToHistory = true) {
@@ -468,7 +541,8 @@ function initYandexMap() {
 
 filterAndSort();
 renderPromo();
-initAOS();
+// Запускаем новую систему анимаций
+initScrollAnimations();
 const initialPage = window.location.hash.slice(1) || 'home';
 if (pages[initialPage]) showPage(initialPage, false); else showPage('home', false);
 setTimeout(updateAllCartControls, 150);
