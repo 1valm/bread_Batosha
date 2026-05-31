@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Batosh Bakery — Bakery and confectionery products in Astrakhan</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <a href="#" class="logo" data-page="home">
+                    <img src="images/logo.png" alt="Batosh Bakery" class="logo-img">
+                </a>
+                <button class="menu-toggle" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#" data-page="home" data-ru="Главная" data-en="Home">Главная</a></li>
+                    <li><a href="#" data-page="catalog" data-ru="Продукция" data-en="Products">Продукция</a></li>
+                    <li><a href="#" data-page="about" data-ru="О нас" data-en="About Us">О нас</a></li>
+                    <li><a href="#" data-page="contacts" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
+                    <li>
+                        <div class="cart-icon" id="cartIcon"><i class="fas fa-shopping-cart"></i><span
+                                class="cart-count" id="cartCount">0</span></div>
+                    </li>
+                    <li><button class="lang-switch" id="langSwitch">English</button></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="home-page" class="page active-page">
+            <div class="hero">
+                <div class="hero-bg"></div>
+                <div class="container hero-grid">
+                    <div class="hero-text" data-aos="fade-right">
+                        <div class="badge" data-ru="Хлебобулочные и кондитерские изделия с любовью"
+                            data-en="Bakery and confectionery products made with love">Хлебобулочные и кондитерские
+                            изделия с любовью</div>
+                        <h1 class="hero-title"><span data-ru="Пекарня" data-en="Bakery">Пекарня</span> <span
+                                data-ru="Батоша" data-en="Batosh">Батоша</span><br><span
+                                data-ru="Хлеб, который согревает" data-en="Bread that warms the soul">Хлеб, который
+                                согревает</span></h1>
+                        <p data-ru="Более 50 видов хлебобулочных и кондитерских изделий. Отгрузка с производства 24/7. Доставка по всей Астрахани и области."
+                            data-en="Over 50 types of bakery and confectionery products. 24/7 shipping from production. Delivery throughout Astrakhan and region.">
+                            Более 50 видов хлебобулочных и кондитерских изделий. Отгрузка с производства 24/7. Доставка
+                            по всей Астрахани и области.</p>
+                        <a href="#" class="btn-primary" data-page="catalog" data-ru="Смотреть всю продукцию"
+                            data-en="View all products">Смотреть всю продукцию</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="spacing-section">
+                <div class="container">
+                    <div class="promo-section" data-aos="fade-up">
+                        <h2 class="section-title spacing-title" data-ru="Акции дня" data-en="Daily Deals">Акции дня</h2>
+                        <div class="promo-grid" id="promoGrid"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="spacing-section">
+                <div class="container">
+                    <div class="about-wrap" data-aos="fade-up">
+                        <div class="about-text">
+                            <h3 data-ru="ООО «Эльвира» — пекарня «Батоша»" data-en="LLC 'Elvira' — Bakery 'Batosh'">ООО
+                                «Эльвира» — пекарня «Батоша»</h3>
+                            <p data-ru="Мы являемся одним из лидеров в сфере производства хлебобулочных изделий в Астраханской области. Наша продукция пользуется неизменным спросом у потребителей на протяжении многих лет. Вся выпечка развозится в 775 точек розничной торговли города и области."
+                                data-en="We are one of the leaders in the production of bakery products in the Astrakhan region. Our products have been in constant demand among consumers for many years. All baked goods are delivered to 775 retail outlets in the city and region.">
+                                Мы являемся одним из лидеров в сфере производства хлебобулочных изделий в Астраханской
+                                области. Наша продукция пользуется неизменным спросом у потребителей на протяжении
+                                многих лет. Вся выпечка развозится в 775 точек розничной торговли города и области.</p>
+                            <div class="director-info"><i class="fas fa-user-tie"></i>
+                                <div><strong data-ru="Аккол Мехмет Хасан" data-en="Akkol Mehmet Hasan">Аккол Мехмет
+                                        Хасан</strong> <span data-ru="— директор с 1999 года"
+                                        data-en="— director since 1999">— директор с 1999 года</span></div>
+                            </div>
+                        </div>
+                        <div class="about-img" style="background-image: url('images/man.jpg');"></div>
+                    </div>
+
+                    <div class="stats-grid" data-aos="fade-up">
+                        <div class="stat-card">
+                            <div class="stat-number">32</div>
+                            <div data-ru="года печем для вас" data-en="years baking for you">года печем для вас</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">50+</div>
+                            <div data-ru="видов изделий" data-en="product types">видов изделий</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">775</div>
+                            <div data-ru="точек продаж" data-en="sales points">точек продаж</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">9</div>
+                            <div data-ru="групп х/б изделий" data-en="bakery groups">групп х/б изделий</div>
+                        </div>
+                    </div>
+
+                    <div class="about-wrap" data-aos="fade-up">
+                        <div class="about-text">
+                            <h3 data-ru="Наше производство" data-en="Our Production">Наше производство</h3>
+                            <p data-ru="Наше производство оснащено полным комплектом оборудования. В цехах установлены 6 ротационных газовых печей и 3 электрические. Для бесперебойной работы предусмотрена дизельная электростанция мощностью 60 КВТ, система очистки воды и аттестованная лаборатория."
+                                data-en="Our production is equipped with a full set of equipment. The workshops have 6 rotary gas ovens and 3 electric ones. For uninterrupted operation, there is a 60 kW diesel power plant, a water purification system and a certified laboratory.">
+                                Наше производство оснащено полным комплектом оборудования. В цехах установлены 6
+                                ротационных газовых печей и 3 электрические. Для бесперебойной работы предусмотрена
+                                дизельная электростанция мощностью 60 КВТ, система очистки воды и аттестованная
+                                лаборатория.</p>
+                            <p data-ru="В 2024 году предприятие приобрело новое оборудование: тестомесы, делители, тестоокруглители, линию для нарезки и упаковки, а также дополнительную ротационную печь."
+                                data-en="In 2024, the company purchased new equipment: dough mixers, dividers, rounders, a cutting and packaging line, as well as an additional rotary oven.">
+                                В 2024 году предприятие приобрело новое оборудование: тестомесы, делители,
+                                тестоокруглители, линию для нарезки и упаковки, а также дополнительную ротационную печь.
+                            </p>
+                        </div>
+                        <div class="about-img" style="background-image: url('images/Technologies.jpg');"></div>
+                    </div>
+
+                    <div data-aos="fade-up">
+                        <h3 class="subsection-title" data-ru="Производственные линии" data-en="Production Lines">
+                            Производственные линии</h3>
+                        <div class="numbered-list">
+                            <ul class="two-columns">
+                                <li><span data-ru="Булочная" data-en="Bun line">Булочная</span></li>
+                                <li><span data-ru="По изготовлению хлеба" data-en="Bread line">По изготовлению
+                                        хлеба</span></li>
+                                <li><span data-ru="По изготовлению батонов" data-en="Baton line">По изготовлению
+                                        батонов</span></li>
+                                <li><span data-ru="По изготовлению ржаных изделий" data-en="Rye products line">По
+                                        изготовлению ржаных изделий</span></li>
+                                <li><span data-ru="По изготовлению кондитерских изделий" data-en="Confectionery line">По
+                                        изготовлению кондитерских изделий</span></li>
+                                <li><span data-ru="По изготовлению мелкоштучных изделий"
+                                        data-en="Small baked goods line">По изготовлению мелкоштучных изделий</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="spacing-section">
+                <div class="container">
+                    <h2 class="section-title spacing-title" data-aos="fade-up" data-ru="Отзывы наших гостей"
+                        data-en="Guest Reviews">Отзывы наших гостей</h2>
+                    <div class="reviews-wrapper" data-aos="fade-up">
+                        <div class="reviews-slider">
+                            <div class="swiper reviewsSwiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="review-card">
+                                            <div class="review-header">
+                                                <div class="review-avatar"><i class="fas fa-user"></i></div>
+                                                <div class="review-name">Елена</div>
+                                            </div>
+                                            <div class="stars">★★★★★</div>
+                                            <p data-ru="Лучший хлеб в Астрахани! Каждое утро беру багет, хрустящий и ароматный."
+                                                data-en="The best bread in Astrakhan! I take a baguette every morning, crispy and aromatic.">
+                                                Лучший хлеб в Астрахани! Каждое утро беру багет, хрустящий и ароматный.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="review-card">
+                                            <div class="review-header">
+                                                <div class="review-avatar"><i class="fas fa-user"></i></div>
+                                                <div class="review-name">Дмитрий</div>
+                                            </div>
+                                            <div class="stars">★★★★★</div>
+                                            <p data-ru="Эклеры невероятные! Тают во рту. Доставка быстрая, всегда свежее."
+                                                data-en="Incredible eclair! They melt in your mouth. Fast delivery, always fresh.">
+                                                Эклеры невероятные! Тают во рту. Доставка быстрая, всегда свежее.</p>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="review-card">
+                                            <div class="review-header">
+                                                <div class="review-avatar"><i class="fas fa-user"></i></div>
+                                                <div class="review-name">Анна</div>
+                                            </div>
+                                            <div class="stars">★★★★★</div>
+                                            <p data-ru="Пирожное «Картошка» — восторг! Необычно и очень вкусно."
+                                                data-en="Potato cake is amazing! Unusual and very tasty.">Пирожное
+                                                «Картошка» — восторг! Необычно и очень вкусно.</p>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="review-card">
+                                            <div class="review-header">
+                                                <div class="review-avatar"><i class="fas fa-user"></i></div>
+                                                <div class="review-name">Михаил</div>
+                                            </div>
+                                            <div class="stars">★★★★★</div>
+                                            <p data-ru="Отличное качество, большой выбор хлеба. Работают круглосуточно."
+                                                data-en="Excellent quality, large selection of bread. Open 24/7.">
+                                                Отличное качество, большой выбор хлеба. Работают круглосуточно.</p>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="review-card">
+                                            <div class="review-header">
+                                                <div class="review-avatar"><i class="fas fa-user"></i></div>
+                                                <div class="review-name">Ольга</div>
+                                            </div>
+                                            <div class="stars">★★★★★</div>
+                                            <p data-ru="Бородинский хлеб — как в детстве! Вкусный, ароматный."
+                                                data-en="Borodinsky bread — like in childhood! Tasty, aromatic.">
+                                                Бородинский хлеб — как в детстве! Вкусный, ароматный.</p>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="review-card">
+                                            <div class="review-header">
+                                                <div class="review-avatar"><i class="fas fa-user"></i></div>
+                                                <div class="review-name">Сергей</div>
+                                            </div>
+                                            <div class="stars">★★★★★</div>
+                                            <p data-ru="Обслуживание на высоте, всегда свежая выпечка."
+                                                data-en="Service at its best, always fresh pastries.">Обслуживание на
+                                                высоте, всегда свежая выпечка.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="catalog-page" class="page">
+            <div class="container">
+                <h2 class="page-title" data-aos="fade-up" data-ru="Наша продукция" data-en="Our Products">Наша продукция
+                </h2>
+                <div class="categories" data-aos="fade-up" id="categoriesContainer"><button class="category-btn active"
+                        data-cat="all" data-ru="Все" data-en="All">Все</button><button class="category-btn"
+                        data-cat="bread" data-ru="Хлеб" data-en="Bread">Хлеб</button><button class="category-btn"
+                        data-cat="baton" data-ru="Батоны" data-en="Batons">Батоны</button><button class="category-btn"
+                        data-cat="rye" data-ru="Ржаные изделия" data-en="Rye products">Ржаные изделия</button><button
+                        class="category-btn" data-cat="pastry" data-ru="Сдоба и булочки"
+                        data-en="Pastries and buns">Сдоба и булочки</button><button class="category-btn"
+                        data-cat="confectionery" data-ru="Кондитерские"
+                        data-en="Confectionery">Кондитерские</button><button class="category-btn" data-cat="small"
+                        data-ru="Мелкоштучные" data-en="Small baked goods">Мелкоштучные</button></div>
+                <div class="controls-panel" data-aos="fade-up" data-aos-delay="50">
+                    <div class="search-box"><i class="fas fa-search"></i><input type="text" id="searchInput"
+                            data-ru-placeholder="Найти выпечку..." data-en-placeholder="Find bakery..."></div>
+                    <div class="sort-box"><select id="sortSelect">
+                            <option value="default" data-ru="Порядок: по умолчанию" data-en="Order: default">Порядок: по
+                                умолчанию</option>
+                            <option value="priceAsc" data-ru="Цена: по возрастанию" data-en="Price: ascending">Цена: по
+                                возрастанию</option>
+                            <option value="priceDesc" data-ru="Цена: по убыванию" data-en="Price: descending">Цена: по
+                                убыванию</option>
+                            <option value="nameAsc" data-ru="Название: А—Я" data-en="Name: A—Z">Название: А—Я</option>
+                            <option value="nameDesc" data-ru="Название: Я—А" data-en="Name: Z—A">Название: Я—А</option>
+                            <option value="newFirst" data-ru="Порядок: сперва новые" data-en="Order: newest first">
+                                Порядок: сперва новые</option>
+                            <option value="oldFirst" data-ru="Порядок: сперва старые" data-en="Order: oldest first">
+                                Порядок: сперва старые</option>
+                        </select><button id="resetFiltersBtn"><i class="fas fa-undo-alt"></i> <span data-ru="Сбросить"
+                                data-en="Reset">Сбросить</span></button></div>
+                </div>
+                <div class="catalog-grid" id="catalogGrid"></div>
+                <div class="load-more-btn"><button class="load-more" id="loadMoreBtn"><span data-ru="Показать ещё"
+                            data-en="Show more">Показать ещё</span></button></div>
+            </div>
+        </div>
+
+        <div id="about-page" class="page">
+            <div class="container">
+                <div class="about-section">
+                    <div class="about-block" data-aos="fade-right">
+                        <div class="about-block-content">
+                            <h3 data-ru="История нашего предприятия" data-en="History of our enterprise">История нашего
+                                предприятия</h3>
+                            <p><span class="brown-highlight" data-ru="ООО «Эльвира»" data-en="LLC 'Elvira'">ООО
+                                    «Эльвира»</span> <span data-ru="начала работу в"
+                                    data-en="started operations in"></span> <span class="brown-highlight">1994
+                                    году</span> <span data-ru="как «Гейзер» в селе Началово. В"
+                                    data-en="as 'Geyser' in the village of Nachalovo. In"></span> <span
+                                    class="brown-highlight">1997 году</span> <span
+                                    data-ru="переехали в помещение таксомоторного парка (350 м²) и переименовались в «Бурджу». В"
+                                    data-en="moved to a taxi depot (350 m²) and renamed to 'Burju'. In"></span> <span
+                                    class="brown-highlight">1999 году</span> <span
+                                    data-ru="руководство сменилось, компания стала ООО СРТП «Эльвира» под руководством"
+                                    data-en="management changed, the company became LLC SRTP 'Elvira' under the leadership of"></span>
+                                <span class="brown-highlight" data-ru="Аккол Мехмет Хасана"
+                                    data-en="Akkol Mehmet Hasan">Аккол Мехмет Хасана</span><span data-ru=". В"
+                                    data-en=". In"></span> <span class="brown-highlight">2004 году</span> <span
+                                    data-ru="переехали на ул. Главно-Продольная, 41 (800 м²). С"
+                                    data-en="moved to Glavno-Prodolnaya St., 41 (800 m²). From"></span> <span
+                                    class="brown-highlight">2008 по 2009 год</span> <span
+                                    data-ru="полностью обновили оборудование. Сейчас работает"
+                                    data-en="completely updated equipment. Now there are"></span> <span
+                                    class="brown-highlight">5 производственных линий</span><span data-ru=". В"
+                                    data-en=". In"></span> <span class="brown-highlight">2014 году</span> <span
+                                    data-ru="площадь выросла до 1800 м², открыт фирменный магазин «Батоша»."
+                                    data-en="the area grew to 1800 m², a branded store 'Batosh' was opened."></span>
+                            </p>
+                        </div>
+                        <div class="about-block-image about-image-1"></div>
+                    </div>
+                    <div class="about-block" data-aos="fade-left">
+                        <div class="about-block-image about-image-2"></div>
+                        <div class="about-block-content">
+                            <h3 data-ru="Традиции и качество" data-en="Traditions and Quality">Традиции и качество</h3>
+                            <ul class="about-features-list">
+                                <li><i class="fas fa-check-circle"></i> <span
+                                        data-ru="Классические технологии хлебопечения"
+                                        data-en="Classic bread baking technologies">Классические технологии
+                                        хлебопечения</span></li>
+                                <li><i class="fas fa-check-circle"></i> <span
+                                        data-ru="Натуральные компоненты и отечественное сырьё"
+                                        data-en="Natural ingredients and domestic raw materials">Натуральные компоненты
+                                        и отечественное сырьё</span></li>
+                                <li><i class="fas fa-check-circle"></i> <span
+                                        data-ru="Ручная работа и традиционные рецепты"
+                                        data-en="Handmade and traditional recipes">Ручная работа и традиционные
+                                        рецепты</span></li>
+                                <li><i class="fas fa-check-circle"></i> <span
+                                        data-ru="Собственная аттестованная лаборатория"
+                                        data-en="Own certified laboratory">Собственная аттестованная лаборатория</span>
+                                </li>
+                                <li><i class="fas fa-check-circle"></i> <span
+                                        data-ru="Расширенный ассортимент кондитерских изделий"
+                                        data-en="Extended range of confectionery products">Расширенный ассортимент
+                                        кондитерских изделий</span></li>
+                            </ul>
+                            <p><strong data-ru="Оснащение:" data-en="Equipment:">Оснащение:</strong> <span
+                                    data-ru="6 ротационных газовых печей, 3 электрические, система очистки воды, дизельная электростанция."
+                                    data-en="6 rotary gas ovens, 3 electric ones, water purification system, diesel power plant.">6
+                                    ротационных газовых печей, 3 электрические, система очистки воды, дизельная
+                                    электростанция.</span></p>
+                        </div>
+                    </div>
+                    <div class="about-block" data-aos="fade-right">
+                        <div class="about-block-content">
+                            <h3 data-ru="Партнёрство и награды" data-en="Partnership and Awards">Партнёрство и награды
+                            </h3>
+                            <p data-ru="Сотрудничаем с кафе, ресторанами и магазинами. Индивидуальный подход, доставка по Астрахани и области, отгрузка 24/7. Гарантируем строгий контроль качества."
+                                data-en="We cooperate with cafes, restaurants and shops. Individual approach, delivery in Astrakhan and region, 24/7 shipping. We guarantee strict quality control.">
+                                Сотрудничаем с кафе, ресторанами и магазинами. Индивидуальный подход, доставка по
+                                Астрахани и области, отгрузка 24/7. Гарантируем строгий контроль качества.
+                            </p>
+                            <p><span class="brown-highlight" data-ru="«Астраханское качество»"
+                                    data-en="Astrakhan Quality">«Астраханское качество»</span> <span
+                                    data-ru="и наградами конкурса" data-en="and awards of the competition"></span> <span
+                                    class="brown-highlight" data-ru="«100 лучших товаров России»"
+                                    data-en="Top 100 Products of Russia">«100 лучших товаров России»</span> <span
+                                    data-ru="(участвуем с 2013 года)." data-en="(participating since 2013)."></span></p>
+                            <p data-ru="Хлеб в России — народный продукт, и мы бережно храним традиции."
+                                data-en="Bread in Russia is a national product, and we carefully preserve traditions.">
+                                Хлеб в России — народный продукт, и мы бережно храним традиции.
+                            </p>
+                        </div>
+                        <div class="about-block-image about-image-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="contacts-page" class="page">
+            <div class="container">
+                <h2 class="page-title" data-aos="fade-up" data-ru="Где нас найти" data-en="Where to find us">Где нас
+                    найти</h2>
+                <div class="contacts-grid">
+                    <div class="contact-info" data-aos="fade-right">
+                        <h3><i class="fas fa-store"></i> <span data-ru="Пекарня Батоша" data-en="Batosh Bakery">Пекарня
+                                Батоша</span></h3>
+                        <div class="contact-detail"><i class="fas fa-map-marker-alt"></i> <span
+                                data-ru="г. Астрахань, ул. Главно-Продольная, 41"
+                                data-en="Astrakhan, Glavno-Prodolnaya St., 41">г. Астрахань, ул. Главно-Продольная,
+                                41</span></div>
+                        <div class="contact-detail"><i class="fas fa-clock"></i> <span
+                                data-ru="Круглосуточно: 24/7, без выходных" data-en="24/7, no days off">Круглосуточно:
+                                24/7, без выходных</span></div>
+                        <div class="contact-detail"><i class="fas fa-phone-alt"></i> +7 (8512) 55-88-22</div>
+                        <div class="contact-detail"><i class="fas fa-envelope"></i> info@hlebelvira.ru</div>
+                        <div class="social-links"><a href="https://vk.com/batosha_astrakhan" target="_blank"><i
+                                    class="fab fa-vk"></i></a><a href="https://ok.ru/" target="_blank"><i
+                                    class="fab fa-odnoklassniki"></i></a><a href="https://max.ru/" target="_blank"><i
+                                    class="fab fa-maxcdn"></i></a></div>
+                    </div>
+                    <div class="contact-map" data-aos="fade-left">
+                        <div id="map"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <img src="images/logo.png" alt="Batosh Bakery" class="footer-logo">
+                <div class="footer-description"
+                    data-ru="Свежая выпечка круглосуточно. Хлеб, батоны, сдоба и кондитерские изделия с любовью."
+                    data-en="Fresh pastries 24/7. Bread, batons, pastries and confectionery made with love.">Свежая
+                    выпечка круглосуточно. Хлеб, батоны, сдоба и кондитерские изделия с любовью.</div>
+            </div>
+            <div class="footer-col">
+                <h4 data-ru="Сотрудничество" data-en="Cooperation">Сотрудничество</h4>
+                <p><i class="fas fa-handshake"></i> <span data-ru="Для кафе и ресторанов"
+                        data-en="For cafes and restaurants">Для кафе и ресторанов</span></p>
+                <p><i class="fas fa-truck"></i> <span data-ru="Доставка по Астрахани"
+                        data-en="Delivery in Astrakhan">Доставка по Астрахани</span></p>
+            </div>
+            <div class="footer-col">
+                <h4 data-ru="Адреса" data-en="Addresses">Адреса</h4>
+                <p><i class="fas fa-location-dot"></i> <span data-ru="ул. Главно-Продольная, 41"
+                        data-en="Glavno-Prodolnaya St., 41">ул. Главно-Продольная, 41</span></p>
+            </div>
+            <div class="footer-col">
+                <h4 data-ru="Контакты" data-en="Contacts">Контакты</h4>
+                <p><i class="fas fa-phone-alt"></i> +7 (8512) 55-88-22</p>
+                <p><i class="fas fa-envelope"></i> info@hlebelvira.ru</p>
+                <div class="footer-social-links">
+                    <a href="https://vk.com/batosha_astrakhan" target="_blank" aria-label="VK"><i
+                            class="fab fa-vk"></i></a>
+                    <a href="https://ok.ru/" target="_blank" aria-label="Odnoklassniki"><i
+                            class="fab fa-odnoklassniki"></i></a>
+                    <a href="https://max.ru/" target="_blank" aria-label="Max"><i class="fab fa-maxcdn"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© ООО «Эльвира», 2026 — <span data-ru="Пекарня «Батоша»" data-en="Batosh Bakery">Пекарня
+                    «Батоша»</span></span>
+            <span><span data-ru="Хлебобулочные и кондитерские изделия"
+                    data-en="Bakery and confectionery products">Хлебобулочные и кондитерские изделия</span></span>
+        </div>
+    </footer>
+
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" id="cartModalClose">&times;</span>
+            <h3><i class="fas fa-shopping-cart"></i> <span data-ru="Корзина" data-en="Cart">Корзина</span></h3>
+            <div id="cartItemsContainer" class="cart-items"></div>
+            <div class="checkout-form">
+                <h4 style="margin-bottom: 1rem; color: #B55A28;"><span data-ru="Оформление заказа"
+                        data-en="Checkout">Оформление заказа</span></h4>
+                <form id="checkoutForm">
+                    <div class="form-group"><label data-ru="Ваше имя *" data-en="Your name *">Ваше имя *</label><input
+                            type="text" id="checkoutName" required></div>
+                    <div class="form-group"><label data-ru="Телефон *" data-en="Phone *">Телефон *</label><input
+                            type="tel" id="checkoutPhone" required></div>
+                    <div class="form-group"><label data-ru="Email" data-en="Email">Email</label><input type="email"
+                            id="checkoutEmail"></div>
+                    <div class="form-group"><label data-ru="Способ доставки" data-en="Delivery method">Способ
+                            доставки</label><select id="checkoutDelivery">
+                            <option value="Самовывоз (бесплатно)" data-ru="Самовывоз (бесплатно)"
+                                data-en="Pickup (free)">Самовывоз (бесплатно)</option>
+                            <option value="Доставка по Астрахани (200 ₽)" data-ru="Доставка по Астрахани (200 ₽)"
+                                data-en="Delivery in Astrakhan (200 ₽)">Доставка по Астрахани (200 ₽)</option>
+                        </select></div>
+                    <div id="deliveryAddressBlock" class="form-group" style="display: none;"><label
+                            data-ru="Адрес доставки *" data-en="Delivery address *">Адрес доставки *</label><input
+                            type="text" id="checkoutAddress" placeholder="г. Астрахань, ул. ..."></div>
+                    <div class="form-group"><label data-ru="Комментарий к заказу" data-en="Order comment">Комментарий к
+                            заказу</label><textarea id="checkoutComment" rows="2"></textarea></div>
+                    <div class="payment-total" id="checkoutTotalBlock"><span data-ru="Итого к оплате:"
+                            data-en="Total to pay:">Итого к оплате:</span> <strong id="checkoutTotal">0</strong> ₽</div>
+                    <button type="submit" class="submit-order" id="submitOrderBtn"><span data-ru="Отправить заказ"
+                            data-en="Submit order">Отправить заказ</span></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?&lang=ru_RU"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
